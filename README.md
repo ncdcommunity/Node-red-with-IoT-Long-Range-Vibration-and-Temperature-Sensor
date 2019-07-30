@@ -173,4 +173,5 @@ It is likely that the gauges aren’t displaying any information, because no sen
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Output_Max_Min.JPG)
 
 - **Temperature Output**
+
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Output_Temperature.JPG)
