@@ -94,14 +94,14 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 
 These nodes for the wireless sensors output a msg object with all of the same information as the Wireless Gateway node, just in a slightly different format, the Sensor Data itself is sent in the msg.payload, which is what most nodes use to interact with the msg itself. 
 
-- **Grab a “split” node from the palette, and place it to the right of the Temp/Hum node.**
+- **Grab a “split” node from the palette, and place it to the right of the Vib/Temp node.**
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Split_node_step1.JPG)
 
 - **double click and check the box under Object that says “Copy key to”, this will split the msg into multiple objects, one for each property in the payload, and set the topics for those new msgs to the property names.**
 
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Split_node_step2.JPG)
 
-- **Now add a “switch” node, this will allow us to send each msg to a specific part of the flow, one to handle RMS, and one Max,one to Min,one to temperature.**
+- **Now add a “switch” node, this will allow us to send each msg to a specific part of the flow, one to handle RMS, and one to Max,one to Min and one to temperature.**
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Switch_node_step1.JPG)
 
 - **In the first field change “payload” to “topic”, Click on the “==” and select “matches regex”, in the field next to it type “rms_.*”, this means “match a string that contains rms_ followed by any character (.) as many characters as are available (*).**
@@ -113,23 +113,33 @@ These nodes for the wireless sensors output a msg object with all of the same in
 
 - **Next let’s add a “chart” from the palette for RMS, copy it two times for MAX and MIN and also add "gauge" for temperature.**
 
-![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Switch_node_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Chart_node_gauge_node.JPG)
 
-- **Set the Label to RMS and 
+- **Now double click on first chart node and set the Group to "[Current]Vibration" and set the Label to RMS as shown in the picture.**
 
-- **For the gauge node set the Label to “Temperature”, and the Value format to “{{value | number:2}}”, and the Units to “Celsius” you can alter the range to the minimum and maximum expected temperature, I’m using 0 and 50.**
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/RMS_node.JPG)
 
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/gauge%20step2.JPG)
+- **Now double click on second chart node and set the Group to "[Current]Vibration" and set the Label to MAX as shown in the picture.**
 
-Another really cool feature of the flow builder is copy+paste, click on the gauge you just added and click ctrl+c (cmd+c on mac), then cntl+v, now you have a second gauge, double click on it to change the Label to Humidity, the Units to RH, and the range to 20 and 80.
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/MAX_node.JPG)
 
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/gauge%20step3.JPG)
+- **Now double click on third chart node and set the Group to "[Current]Vibration" and set the Label to MIN as shown in the picture.**
 
-- **Now draw wires from the Temperature/Humidity node to the split node, from the split node to the switch node, and from the switch node’s first (top) output to the temperature gauge node, and from the switch node’s second output to the humidity gauge.**
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/MIN_node.JPG)
 
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/final%20flow.JPG)
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/RMS_MAX_MIN.JPG)
 
-Once that’s done click deploy. 
+- **Next for the gauge node set the Label to “Temperature”, and the Value format to “{{value | number:2}}”, and the Units to “Celsius” you can alter the range to the minimum and maximum expected temperature, I’m using 0 and 50.**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Temperature_node.JPG)
+
+- **Now draw wires from the Vibration/Temperature node to the split node, from the split node to the switch node, and from the switch node’s first (top) output to the RMS Chart node, and from the switch node’s second output to the MAX chart, and from the switch node’s third output to the Min chart, and from the switch node’s fourth output to the temperature gauge.**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Final_wire_connection.JPG)
+
+- **Once that’s done click deploy.**
+
+![alt tag]()
 
 # NODE-RED DASHBOARD
 Provides the ability to create a UI using the flow builder, provides charts, graphs, and a number of other visual elements we can use to display data, along with nodes to trigger a flow using user input. We will use some of these nodes to display the telemetry from your wireless sensors.
