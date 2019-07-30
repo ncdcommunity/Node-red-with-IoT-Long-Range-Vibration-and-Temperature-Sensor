@@ -90,6 +90,14 @@ we need to separate wireless sensor records domestically in order that we are ab
 
 You’ll notice this automatically sets the sensor type for you, you can also give it a name to make it easier to identify. As noted in the info tab, the Serial Device for Config field is optional, and we won’t worry about it right now. The node you have just added effectively works as a filter on incoming sensor data, only passing through data for the mac address, or sensor type if no mac address is present.
 
+- **Now go back to your palette and type “debug” into the search field at the top, grab one of these nodes and drag it to the right of your Wireless Gateway**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/debug_wirelessdevice_step1.JPG)
+
+- **Double click on it and click done**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/debug_wirelessdevice_step2.JPG)
+
 # Displaying up the Vibration/Temperature
 
 These nodes for the wireless sensors output a msg object with all of the same information as the Wireless Gateway node, just in a slightly different format, the Sensor Data itself is sent in the msg.payload, which is what most nodes use to interact with the msg itself. 
@@ -139,20 +147,30 @@ These nodes for the wireless sensors output a msg object with all of the same in
 
 - **Once that’s done click deploy.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/final_flow.JPG)
 
 # NODE-RED DASHBOARD
 Provides the ability to create a UI using the flow builder, provides charts, graphs, and a number of other visual elements we can use to display data, along with nodes to trigger a flow using user input. We will use some of these nodes to display the telemetry from your wireless sensors.
 
 - **let’s check it out! There is a tab on the top right that says “Dashboard”**
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/final%20flow.JPG)
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Dashboard_step1.jpg)
 
 - **on the top right of that tab is the little “new window” icon, click on it to view your UI.**
 
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/Dashboard%20step2.JPG)
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Dashboard_step2.jpg)
 
 It is likely that the gauges aren’t displaying any information, because no sensor data has been reported since you deployed the flow, click the reset button on your temperature/humidity sensor to force it to check in and your gauges should jump up. You should now have real time data displaying!
 
 # NODE-RED DASHBOARD OUTPUT
-- **Now as the temperature and humidity increases and decreases new data available inside the various variable.**
-![alt tag](https://github.com/ncdcommunity/Ncd-Long-Range-Temperature-and-Humidity-Sensor-with-Node-Red/blob/master/Dashboard%20output.JPG)
+- **Now as the value of vibration and temperature increases and decreases new data available inside the various variable.**
+
+- **RMS/MAX/MIN Output**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Output_RMS_MAX_MIN.JPG)
+
+- **MAX/MIN Output**
+
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Output_Max_Min.JPG)
+
+- **Temperature Output**
+![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Output_Temperature.JPG)
