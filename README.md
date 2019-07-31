@@ -86,7 +86,7 @@ we need to separate wireless sensor records domestically in order that we are ab
 
 - ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/wirelessdevice%20step2.JPG)
 
-- ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/wirelessdevice%20step3.JPG)
+- ![alt tag](https://github.com/ncdcommunity/Node-red-with-IoT-Long-Range-Vibration-and-Temperature-Sensor/blob/83112dd8cde78248ead97bc7ef01f90c44f9be71/wirelessdevice%20step3.JPG)
 
 You’ll notice this automatically sets the sensor type for you, you can also give it a name to make it easier to identify. As noted in the info tab, the Serial Device for Config field is optional, and we won’t worry about it right now. The node you have just added effectively works as a filter on incoming sensor data, only passing through data for the mac address, or sensor type if no mac address is present.
 
