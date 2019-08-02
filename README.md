@@ -92,11 +92,11 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 
 - **Now go back to your palette and type “debug” into the search field at the top, grab one of these nodes and drag it to the right of your Wireless Gateway**
 
-![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/debug_wirelessdevice_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Email-Alerts-with-Vibration-and-Temperature-Sensor/blob/master/debug_wirelessdevice_step1.JPG)
 
 - **Double click on it and click done**
 
-![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/debug_wirelessdevice_step2.JPG)
+![alt tag](https://github.com/rjrajbir/Email-Alerts-with-Vibration-and-Temperature-Sensor/blob/master/debug_wirelessdevice_step2.JPG)
 
 # Displaying up the Vibration/Temperature
 
